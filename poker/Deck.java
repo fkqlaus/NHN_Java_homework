@@ -11,8 +11,6 @@ A → K → Q → J → 10 → 9 → 8 → 7 → 6 → 5 → 4 → 3 → 2
 
 가장 높은 카드는 스페이드 A(♠) 이며, 가장 낮은 카드는 2(♣) 가 됩니다.
  */
-
-
  /*
   * 
   0~12 클로버 0 = 2 , 1 = 3 , 2 = 4, 3 = 5 , 4 = 6 , 5 = 7 , 6 = 8, 7 = 9, 8 = 10, 9 = J, 10 = Q , 11 = K , 12 = A
@@ -23,10 +21,12 @@ A → K → Q → J → 10 → 9 → 8 → 7 → 6 → 5 → 4 → 3 → 2
   */
 
 
-public class Deck {
+public class Deck implements  Deck_basic{
 
-    final static int card_num = 52;
     
+    
+    final static int card_num = 52;
+
     int[] card_list = new int[card_num];
 
 
@@ -35,16 +35,15 @@ public class Deck {
         suffle();
     }
 
-
-
+    @Override
     public void make_deck(){
 
         for(int i=0;i<card_num;i++){
             card_list[i] = i;
         }
-
     }
 
+    @Override
     public void suffle(){
 
         for(int i=0;i<card_num;i++){

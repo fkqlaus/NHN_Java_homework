@@ -3,29 +3,6 @@ import java.util.Scanner;
 
 public class Player {
 
-  public Player(){
-    setPlayer();
-    Deck d = new Deck();
-    for(int i=0;i<playerNum;i++){
-      for(int j=0;j<5;j++){
-
-          player[i][j] = d.card_list[j+i*5];
-      }
-    }
-
-
-    sort_player();
-
-    for(int i=0;i<playerNum;i++){
-      System.out.print(name[i]+": ");
-      for(int j=0;j<5;j++){
-
-          System.out.print(player[i][j]+" ");
-      }
-      System.out.println();
-    }
-  }
-
   static String[] names = {
     "Oliver", "Emma", "Liam", "Ava", "Noah", "Sophia", "James", "Isabella", "Benjamin", "Mia",
     "Lucas", "Charlotte", "Henry", "Amelia", "Alexander", "Harper", "William", "Evelyn", "Elijah", "Abigail",
@@ -39,6 +16,30 @@ public class Player {
 
   static int[][] player;
   static String[] name;
+
+  //생성자
+  public Player(){
+    setPlayer();
+    Deck d = new Deck();
+    for(int i=0;i<playerNum;i++){
+      for(int j=0;j<5;j++){
+
+          player[i][j] = d.card_list[j+i*5];
+      }
+    }
+    sort_player();
+
+    for(int i=0;i<playerNum;i++){
+      System.out.print(name[i]+": ");
+      for(int j=0;j<5;j++){
+
+          System.out.print(player[i][j]+" ");
+      }
+      System.out.println();
+    }
+  }
+
+  
 
 
   public static void setPlayer(){
